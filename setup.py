@@ -13,7 +13,7 @@ module = Extension(
 
 setup(
     name="dokkey",
-    version="1.0.8",
+    version="1.0.9",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="Qiyaya",
@@ -25,7 +25,7 @@ setup(
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
         "Topic :: Software Development :: Build Tools",
-        "License :: OSI Approved :: MIT AND Apache-2.0",
+        "License :: OSI Approved :: Apache Software License",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
