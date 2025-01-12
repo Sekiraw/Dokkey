@@ -1,23 +1,25 @@
 from setuptools import setup, Extension
-import pypandoc
-
+with open("README.md", "r") as fh: 
+    long_description = fh.read()
+    
 module = Extension(
     "dokkey",
     sources=["main.c"],
     libraries=["user32", "kernel32"],  # Windows libraries
 )
 
-description = ""
-try:
-    description=pypandoc.convert('README.md', 'rst')
-except (IOError, ImportError):
-    description=open('README.md').read()
-
 setup(
     name="dokkey",
     version="1.0.3",
-    description=description,
+    long_description=long_description, 
+    long_description_content_type="text/markdown",
     author="Peter Bohus",
     author_email="v2020.bohus.peter@gmail.com",
+    license="Apache-2.0"
     ext_modules=[module],
+    classifiers=[ 
+        "Programming Language :: Python :: 3", 
+        "License :: OSI Approved :: Apache-2.0 License", 
+        "Operating System :: Windows", 
+    ]
 )
