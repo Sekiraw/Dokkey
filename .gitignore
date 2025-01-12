@@ -3,6 +3,11 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+dokkey.egg-info/*
+
+Dokkey.vcxproj
+Dokkey.vcxproj.filters
+
 # User-specific files
 *.rsuser
 *.suo
@@ -398,8 +403,3 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-
-dokkey.egg-info/*
-
-Dokkey.vcxproj
-Dokkey.vcxproj.filters
