@@ -10,16 +10,12 @@ module = Extension(
 
 setup(
     name="dokkey",
-    version="1.0.3",
+    version="1.0.4",
     long_description=long_description, 
     long_description_content_type="text/markdown",
     author="Peter Bohus",
     author_email="v2020.bohus.peter@gmail.com",
-    license="Apache-2.0"
+    license="Apache-2.0",
     ext_modules=[module],
-    classifiers=[ 
-        "Programming Language :: Python :: 3", 
-        "License :: OSI Approved :: Apache-2.0 License", 
-        "Operating System :: Windows", 
-    ]
+    classifiers=["Programming Language :: Python :: 3", "License :: OSI Approved :: Apache-2.0 License", "Operating System :: Windows"]
 )
