@@ -11,7 +11,7 @@ module = Extension(
 
 setup(
     name="dokkey",
-    version="1.0.6",
+    version="1.0.7",
     long_description=long_description, 
     long_description_content_type="text/markdown",
     author="Peter Bohus",

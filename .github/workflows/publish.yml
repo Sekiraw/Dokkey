@@ -3,7 +3,7 @@ name: Publish to PyPI
 on:
   push:
     branches:
-      - main
+      - release
 
 jobs:
   build-and-publish:
@@ -25,9 +25,6 @@ jobs:
 
       - name: Build package
         run: python -m build
-
-      - name: Log directory contents
-        run: dir
 
       - name: Publish to PyPI
         run: python -m twine upload dist/*
