@@ -27,6 +27,6 @@ jobs:
         run: python -m build
 
       - name: Publish to PyPI
-        uses: python -m twine upload dist/*
+        run: python -m twine upload dist/*
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
