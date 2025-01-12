@@ -46,13 +46,16 @@ static PyObject* install_hook(PyObject* self, PyObject* args) {
 }
 
 
+static uint8_t should_exit = 0;
+
 static PyObject* run_message_loop(PyObject* self, PyObject* args) {
     MSG msg;
-    while (GetMessage(&msg, NULL, 0, 0)) {
+    should_exit = 0;
+    while (!should_exit && GetMessage(&msg, NULL, 0, 0)) {
         TranslateMessage(&msg);
         DispatchMessage(&msg);
     }
-
+    PyErr_Clear();
     Py_RETURN_NONE;
 }
 
@@ -64,12 +67,13 @@ static PyObject* uninstall_hook(PyObject* self, PyObject* args) {
         }
         hKeyboardHook = NULL;
     }
-    
+
     Py_XDECREF(callback);
     callback = NULL;
-    
+
+    should_exit = 1;
     PostQuitMessage(0);
-    
+
     Py_RETURN_NONE;
 }
 

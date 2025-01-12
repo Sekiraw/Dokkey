@@ -400,3 +400,6 @@ FodyWeavers.xsd
 *.sln.iml
 
 dokkey.egg-info/*
+
+Dokkey.vcxproj
+Dokkey.vcxproj.filters
