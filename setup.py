@@ -17,5 +17,5 @@ setup(
     author_email="v2020.bohus.peter@gmail.com",
     license="Apache-2.0",
     ext_modules=[module],
-    classifiers=["Programming Language :: Python :: 3", "License :: OSI Approved :: Apache-2.0 License", "Operating System :: Windows"]
+    classifiers=["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT AND (Apache-2.0 OR BSD-2-Clause) License", "Operating System :: OS Independent"]
 )
