@@ -64,7 +64,7 @@ It may require administrator privileges for certain use cases.
 Contributions are welcome! Feel free to open an issue or submit a pull request if you have suggestions or improvements.
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the Apache-2.0 License. See the LICENSE file for details.
 
 ## Author
 Developed by Sekiraw
