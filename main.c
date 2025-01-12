@@ -80,9 +80,16 @@ static PyObject* uninstall_hook(PyObject* self, PyObject* args) {
 }
 
 static PyMethodDef DokkeyMethods[] = {
-    {"install_hook", install_hook, METH_VARARGS, "Install a keyboard hook with a callback"},
-    {"uninstall_hook", uninstall_hook, METH_NOARGS, "Uninstall the keyboard hook"},
-    {"run_message_loop", run_message_loop, METH_NOARGS, "Run the message loop"},
+    {"install_hook", install_hook, METH_VARARGS, 
+     "Install a keyboard hook.\n\n"
+     "Arguments:\n"
+     "  callback (callable): A Python function to call on key press."},
+    {"uninstall_hook", uninstall_hook, METH_NOARGS, 
+     "Uninstall the keyboard hook.\n\n"
+     "Stops the global keyboard hook."},
+    {"run_message_loop", run_message_loop, METH_NOARGS, 
+     "Run the Windows message loop.\n\n"
+     "Processes events until `uninstall_hook` is called."},
     {NULL, NULL, 0, NULL}
 };
 
