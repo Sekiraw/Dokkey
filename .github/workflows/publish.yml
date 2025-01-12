@@ -26,6 +26,9 @@ jobs:
       - name: Build package
         run: python -m build
 
+      - name: Log directory contents
+        run: dir
+
       - name: Publish to PyPI
         run: python -m twine upload dist/*
         env:
