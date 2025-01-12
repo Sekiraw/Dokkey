@@ -8,7 +8,7 @@ module = Extension(
 
 setup(
     name="dokkey",
-    version="1.0.1",
+    version="1.0.2",
     description="A Python module for detecting keyboard events",
     author="Peter Bohus",
     author_email="v2020.bohus.peter@gmail.com",
