@@ -45,15 +45,6 @@ static PyObject* install_hook(PyObject* self, PyObject* args) {
     Py_RETURN_NONE;
 }
 
-static PyObject* uninstall_hook(PyObject* self, PyObject* args) {
-    if (hKeyboardHook) {
-        UnhookWindowsHookEx(hKeyboardHook);
-        hKeyboardHook = NULL;
-    }
-    Py_XDECREF(callback);
-    callback = NULL;
-    Py_RETURN_NONE;
-}
 
 static PyObject* run_message_loop(PyObject* self, PyObject* args) {
     MSG msg;
@@ -61,6 +52,24 @@ static PyObject* run_message_loop(PyObject* self, PyObject* args) {
         TranslateMessage(&msg);
         DispatchMessage(&msg);
     }
+
+    Py_RETURN_NONE;
+}
+
+static PyObject* uninstall_hook(PyObject* self, PyObject* args) {
+    if (hKeyboardHook) {
+        if (!UnhookWindowsHookEx(hKeyboardHook)) {
+            PyErr_SetString(PyExc_RuntimeError, "Failed to uninstall hook");
+            return NULL;
+        }
+        hKeyboardHook = NULL;
+    }
+    
+    Py_XDECREF(callback);
+    callback = NULL;
+    
+    PostQuitMessage(0);
+    
     Py_RETURN_NONE;
 }
 
