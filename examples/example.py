@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 import dokkey
 
 # Define a Python callback
