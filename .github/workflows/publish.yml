@@ -27,6 +27,6 @@ jobs:
         run: python -m build
 
       - name: Publish to PyPI
-        uses: pypa/gh-action-pypi-publish@v1
+        uses: python -m twine upload dist/*
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
