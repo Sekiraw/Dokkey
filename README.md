@@ -60,8 +60,29 @@ Dokkey leverages Windows APIs to capture global keyboard events and converts the
 ## Limitations
 This package works only on Windows.
 It may require administrator privileges for certain use cases.
+
 ## Contributing
 Contributions are welcome! Feel free to open an issue or submit a pull request if you have suggestions or improvements.
+
+## Local Development
+To set up a local development environment, follow these steps:
+
+1. Create and activate a virtual environment:
+    ```bash
+    python -m venv venv
+    venv/Scripts/activate
+    ```
+2. Build & install the project
+    ```bash
+    python setup.py build
+    python setup.py install
+    ```
+The module is now installed in the virtual environment. You can test it by running the example script:
+
+```bash
+python examples/example.py
+```
+
 
 ## License
 This project is licensed under the Apache-2.0 License. See the LICENSE file for details.
