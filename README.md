@@ -1,6 +1,6 @@
 # Dokkey
 
-**Dokkey** is a Python package designed to detect keypresses on Windows. It captures keyboard input and returns the ASCII code of the key pressed. This package has been tested on **Windows 11**.
+**Dokkey** is a lightweight Python package designed to detect keypresses on Windows. It captures keyboard input and returns the ASCII code of the key pressed. This package has been tested on **Windows 11**.
 
 ---
 
