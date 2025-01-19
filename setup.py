@@ -14,7 +14,7 @@ module = Extension(
 
 setup(
     name="dokkey",
-    version="1.0.1",
+    version="1.2.1",
     description="Dokkey is a Python package designed to detect keypresses on Windows",
     long_description=long_description,
     long_description_content_type="text/markdown",
