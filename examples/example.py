@@ -1,15 +1,29 @@
 # SPDX-License-Identifier: Apache-2.0
+# Author: Peter Bohus
 
+import signal
 import dokkey
 
-# Define a Python callback
-def on_key(vk_code):
-    print(f"Key pressed: {vk_code}")
-    if vk_code == 27: # (esc)
-        print("Stop")
+def cleanup_and_exit(signum, frame):
+    try:
         dokkey.uninstall_hook()
-        print("Stopped")
+    except Exception as e:
+        print(f">>> Error during cleanup: {e}")
+    finally:
+        print(">>> Exiting gracefully.")
+        exit(0)
 
-dokkey.install_hook(on_key)
+signal.signal(signal.SIGINT, cleanup_and_exit)
 
-dokkey.run_message_loop()
+# Install the hook and run the message loop
+def on_key_press(key_code):
+    print(f">>> Key pressed: {key_code}")
+
+print("Listening for key presses. Press Ctrl+C to stop.")
+try:
+    dokkey.install_hook(on_key_press)
+    dokkey.run_message_loop()
+except Exception as e:
+    print(f">>> Error: {e}")
+finally:
+    dokkey.uninstall_hook()

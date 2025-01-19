@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
+// Author: Peter Bohus
 
 #define PY_SSIZE_T_CLEAN
 #include <Python.h>
@@ -53,6 +54,7 @@ static PyObject* run_message_loop(PyObject* self, PyObject* args) {
     MSG msg;
     should_exit = 0;
     while (!should_exit && GetMessage(&msg, NULL, 0, 0)) {
+        if (callback == NULL) break;
         TranslateMessage(&msg);
         DispatchMessage(&msg);
     }

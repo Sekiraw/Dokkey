@@ -1,4 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
+# Author: Peter Bohus
 
 from setuptools import setup, Extension
 
@@ -13,7 +14,7 @@ module = Extension(
 
 setup(
     name="dokkey",
-    version="1.1.1",
+    version="1.0.1",
     description="Dokkey is a Python package designed to detect keypresses on Windows",
     long_description=long_description,
     long_description_content_type="text/markdown",
